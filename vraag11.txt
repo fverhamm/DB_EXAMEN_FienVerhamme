@@ -1,0 +1,20 @@
+mongoimport bioinf_mongo_examen.json
+use test
+> db.bioinf_mongo_examen.find( { percentage_of_side_effects: {$gt: 12 } } )
+{ "_id" : ObjectId("588878f14ffaac2610855700"), "drug" : "DILANTIN-30", "company" : "AbbVie Inc.", "method_of_admission" : [ "FOR SOLUTION;INHALATION" ], "percentage_of_side_effects" : 13 }
+{ "_id" : ObjectId("588878f14ffaac2610855701"), "drug" : "HEDULIN", "company" : "AbbVie Inc.", "method_of_admission" : [ "SPRAY;INHALATION" ], "percentage_of_side_effects" : 13 }
+{ "_id" : ObjectId("588878f14ffaac2610855703"), "drug" : "M.V.I.-12 (WITHOUT VITAMIN K)", "company" : "AbbVie Inc.", "method_of_admission" : [ "SPRAY;INHALATION" ], "percentage_of_side_effects" : 13 }
+{ "_id" : ObjectId("588878f14ffaac2610855704"), "drug" : "UNITENSEN", "company" : "AbbVie Inc.", "method_of_admission" : [ "SPRAY;INHALATION" ], "percentage_of_side_effects" : 13 }
+{ "_id" : ObjectId("588878f14ffaac2610855705"), "drug" : "RAUDIXIN", "company" : "AbbVie Inc.", "method_of_admission" : [ "SPRAY;INHALATION", "INSERT;OPHTHALMIC" ], "percentage_of_side_effects" : 26 }
+{ "_id" : ObjectId("588878f14ffaac2610855777"), "drug" : "BIPHETAMINE 7.5", "company" : "Durata Therapeutics, Inc.", "method_of_admission" : [ "SOLUTION, ELIXIR;ORAL", "TABLET, TABLET;ORAL" ], "percentage_of_side_effects" : 13 }
+{ "_id" : ObjectId("588878f14ffaac2610855778"), "drug" : "MEPHYTON", "company" : "Durata Therapeutics, Inc.", "method_of_admission" : [ "EMULSION; OPHTHALMIC", "TABLET, TABLET;ORAL" ], "percentage_of_side_effects" : 13 }
+{ "_id" : ObjectId("588878f14ffaac2610855779"), "drug" : "SERPALAN", "company" : "Durata Therapeutics, Inc.", "method_of_admission" : [ "EMULSION; OPHTHALMIC", "TABLET, TABLET;ORAL" ], "percentage_of_side_effects" : 13 }
+{ "_id" : ObjectId("588878f14ffaac26108557d2"), "drug" : "ORA-TESTRYL", "company" : "AbbVie Inc.", "method_of_admission" : [ "FOR SOLUTION;INHALATION" ], "percentage_of_side_effects" : 13 }
+{ "_id" : ObjectId("588878f14ffaac26108557d3"), "drug" : "DARANIDE", "company" : "AkPharma Inc", "method_of_admission" : [ "SOLUTION;ORAL, RECTAL", "SOLUTION;INTRAVENOUS" ], "percentage_of_side_effects" : 15 }
+{ "_id" : ObjectId("588878f14ffaac2610855a91"), "drug" : "SODIUM POLYPHOSPHATE-TIN KIT", "company" : "Alliance Pharma plc", "method_of_admission" : [ "POWDER;INTRAPLEURAL" ], "percentage_of_side_effects" : 13 }
+{ "_id" : ObjectId("588878f14ffaac2610855cb7"), "drug" : "TOLAZAMIDE", "company" : "Watson Pharmaceuticals, Inc.", "method_of_admission" : [ "POWDER;INTRAPLEURAL", "SOLUTION, ELIXIR;ORAL" ], "percentage_of_side_effects" : 13 }
+> db.bioinf_mongo_examen.find( { percentage_of_side_effects: {$gt: 12 } } ).count()
+12
+
+db.bioinf_mongo_examen.find( { percentage_of_side_effects: {$gt: 10 } }, { company : 1 } ).sort(percentage_of_side_effects:-1)
+
