@@ -1,0 +1,15 @@
+CREATE database bioinf_examen
+GRANT all on bioinf_examen.* TO fverhamm@localhost;
+$ mysql -u root -p bioinf_examen <bioinf_examen.sql
+SELECT gene_name, (seq_region_end - seq_region_start + 1) AS size FROM gene ORDER BY size LIMIT 1;
++-----------+------+
+| gene_name | size |
++-----------+------+
+| TRDD1     |    8 |
++-----------+------+
+mysql> SELECT gene_name, count(*) FROM gene JOIN transcript on gene.gene_id=transcript.gene_id GROUP by gene_name ORDER by count(*) desc LIMIT 1 OFFSET 1;
+| gene_name | count(*) |
++-----------+----------+
+| Y_RNA     |      813 |
++-----------+----------+
+
