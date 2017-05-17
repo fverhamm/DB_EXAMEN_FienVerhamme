@@ -1,0 +1,2 @@
+curl 'https://rest.ensembl.org/sequence/id/symbol/mus_musculus/Notch1' -H 'Content-type:application/json'type=genomic' -H 'Content-type:text/x-fasta'
+
