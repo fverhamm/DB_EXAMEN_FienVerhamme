@@ -1,0 +1,14 @@
+UNF	unnormalized form, grouperen van alle data in 1 entiteit	
+	DB[staffNo, dentistname, patientno, patientname(appointdate, appointtime, surgeryNo)]
+1NF	elk attribuut is atomair, geen enkel attribuut wordt herhaald, afzonderlijke entiteit per groep 	gegevens die bij elkaar horen
+	DB(staffNo, dentistname, patientno, patientname) 
+	R1(appointdate, patientno, appointtime, surgeryNo)
+2NF	alle niet-sleutel attributen zijn volledig functioneel afhankelijk van de primaire sleutel
+	DB(staffNo, dentistname) 
+	R1(staffNo, patientno, patientname)
+	R2(appointdate, patientno, appointtime, surgeryNo)
+3NF	alle attributen die niet tot een sleutel behoren, hangen niet af van een niet-sleutel attribuut
+	DB(staffNo, dentistname) 
+	R1(staffNo, patientno, patientname)
+	R2(appointdate, patientno, appointtime)
+	R3(appointtime, surgeryNo)
